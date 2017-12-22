@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.pc.lastadaptertest.Fruit" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/itemFruitBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/itemFruitName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@{item.name}"
+            android:textColor="@{item.color}"
+            tools:text="이름" />
+
+    </LinearLayout>
+</layout>

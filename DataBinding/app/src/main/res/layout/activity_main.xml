@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.pc.databinding.User"/>
+        <!--name = 변수로 사용할 이름-->
+        <!--type = 패키지 -->
+        <!--user 클래스의 패키지-->
+        <!--데이터바인딩 사용하기 @{이름.변수}-->
+        <import type="android.view.View"/>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.pc.databinding.MainActivity">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.name}"
+                tools:text="name"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.email}"
+                android:background="@{user.count}"
+                tools:text="email"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.count + ``}"
+                tools:text="count"/>
+            <!--`1왼쪽에 있는거-->
+            <Button
+                android:id="@+id/main_btn1"
+                tools:text="asdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@{user.count}"
+                />
+            <Button
+                android:id="@+id/main_btn2"
+                tools:text="asdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@{user.count}"/>
+            <Button
+                android:id="@+id/main_btn3"
+                tools:text="asdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@{user.count}"/>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
